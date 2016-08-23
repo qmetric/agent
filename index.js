@@ -333,7 +333,7 @@ var Response = prime({
 
         // sugar
         this.accepted      = status === 202
-        this.noContent     = length === '0' || status === 204 || status === 1223
+        this.noContent = length === '0' || status === 204 || status === 1223 || !(this.text && this.text.length)
         this.badRequest    = status === 400
         this.unauthorized  = status === 401
         this.notAcceptable = status === 406
